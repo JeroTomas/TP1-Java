@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class TPTEMA1 {
+
+    public static void main(String[] args) {
+        Scanner esc = new Scanner (System.in);
+        
+        System.out.println("Ingrese su edad: ");
+        int edadUsuario = esc.nextInt();
+        
+         if (edadUsuario < 12) {
+            System.out.println("Eres un Niño.");
+        } else if (edadUsuario >= 12 && edadUsuario <= 17) {
+            System.out.println("Eres un Adolescente.");
+        } else if (edadUsuario >= 18 && edadUsuario <= 59) {
+            System.out.println("Eres un Adulto.");
+        } else if (edadUsuario >= 60) {
+            System.out.println("Eres un Adulto mayor.");
+        } else {
+            System.out.println("Edad inválida.");
+        }
+    }
+}
