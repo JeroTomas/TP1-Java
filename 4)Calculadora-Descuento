@@ -1,1 +1,37 @@
+import java.util.Scanner;
 
+public class TPTEMA1 {
+    public static void main(String[] args) {
+        Scanner esc = new Scanner(System.in);
+
+        System.out.print("Ingresa el precio del producto: ");
+        double precioOriginal = esc.nextDouble();
+
+        System.out.print("Ingresa la categoría del producto (A, B o C): ");
+        char categoria = esc.next().toUpperCase().charAt(0); 
+        double descuento = 0.0;
+
+        switch (categoria) {
+            case 'A':
+                descuento = 0.10; // 10%
+                break;
+            case 'B':
+                descuento = 0.15; // 15%
+                break;
+            case 'C':
+                descuento = 0.20; // 20%
+                break;
+            default:
+                System.out.println("Categoría no válida");
+                return; 
+        }
+
+        double montoDescuento = precioOriginal * descuento;
+        double precioFinal = precioOriginal - montoDescuento;
+
+        System.out.println("Precio original: $" + precioOriginal);
+        System.out.println("Descuento aplicado: $" + montoDescuento);
+        System.out.println("Precio final: $" + precioFinal);
+
+    }
+}
