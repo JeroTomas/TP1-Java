@@ -1,1 +1,27 @@
+import java.util.Scanner;
 
+public class TPTEMA1 {
+    
+    static double descuentoEspecial = 0.10;
+    
+    public static double calcularDescuentoEspecial (double precio) {
+        
+        double descuentoAplicado = precio / (descuentoEspecial*100); 
+        double precioFinal = precio - descuentoAplicado;
+        
+        return precioFinal;
+    }
+ 
+    
+    public static void main(String[] args) {
+        Scanner esc = new Scanner(System.in); 
+        
+        System.out.println("Ingrese el precio del producto: ");
+        double precio = esc.nextDouble();
+        
+        double precioFinal = calcularDescuentoEspecial(precio);
+        
+        System.out.println("El descuento especial aplicado es: " + precio / 10);
+        System.out.println("El precio final con descuento es: " + precioFinal);
+     }
+}
