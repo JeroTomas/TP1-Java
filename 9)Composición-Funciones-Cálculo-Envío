@@ -1,1 +1,46 @@
+import java.util.Scanner;
 
+public class TPTEMA1 {
+    
+    public static double calcularCostoEnvio(double peso, String zona){
+       double costoEnvioNac = 5 * peso;
+       double costoEnvioInt = 10 * peso;
+       double costoEnvioFinal = 0;
+       
+      if (zona.equalsIgnoreCase("Nacional")) {
+            costoEnvioFinal = costoEnvioNac;
+        }else if (zona.equalsIgnoreCase("Internacional")){
+            costoEnvioFinal  = costoEnvioInt;
+        }
+      
+       return costoEnvioFinal; 
+    }
+    
+    public static double calcularTotalCompra(double precioProducto, double costoEnvioFinal) {
+        double totalCompra = precioProducto + costoEnvioFinal;
+        
+        return totalCompra; 
+    }
+    
+    
+    public static void main(String[] args) {
+        Scanner esc = new Scanner(System.in); 
+        
+        System.out.print("Ingrese el peso del paquete (en kg): ");
+        double peso = esc.nextDouble();
+        esc.nextLine();
+        
+        System.out.print("Ingrese la zona del envió (Nacional o Internaciol: ");
+        String zona = esc.nextLine();
+        
+        System.out.print("Ingrese el precio del producto: ");
+        double precioProducto = esc.nextDouble();
+        
+        double costoEnvio = calcularCostoEnvio(peso, zona);
+        double total = calcularTotalCompra(precioProducto, costoEnvio);
+        
+        System.out.println("Costo del envio: " + total);
+        
+        
+    }
+}
