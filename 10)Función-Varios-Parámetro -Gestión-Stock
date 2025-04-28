@@ -1,1 +1,27 @@
+import java.util.Scanner;
 
+public class TPTEMA1 {
+    
+    public static int actualizarStock (int stockActual, int cantidadVendida, int cantidadRecibida) {
+        int nuevoStock = stockActual-cantidadVendida+cantidadRecibida;
+        return nuevoStock;
+    }
+ 
+    
+    public static void main(String[] args) {
+        Scanner esc = new Scanner(System.in); 
+        
+        System.out.print("Ingrese el stock actual del producto: ");
+        int stockActual = esc.nextInt();
+        
+        System.out.print("Ingrese la cantidad vendida del producto: ");
+        int cantidadVendida = esc.nextInt();
+        
+        System.out.print("Ingrese la cantidad recibida del producto: ");
+        int cantidadRecibida = esc.nextInt();
+        
+        int stockFinal = actualizarStock(stockActual, cantidadVendida, cantidadRecibida);
+        
+        System.out.println("El stock del producto es: " + stockFinal);
+    }
+}
